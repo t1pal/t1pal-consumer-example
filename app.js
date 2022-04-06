@@ -10,23 +10,25 @@ var express = require('express')
   , bodyParser = require('body-parser')
   , favicon = require('serve-favicon')
   , logger = require('morgan')
-  , methodOverride = require('method-override');
+  , config = require('./env')
+  ;
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('port', config.port);
+app.set('views', config.express.views_path);
 app.set('view engine', 'pug');
-app.use(favicon(__dirname + '/public/images/favicon.png'));
+app.use(favicon(config.express.favicon));
 app.use(logger('dev'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
-app.use(require('stylus').middleware(__dirname + '/public'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('query parser', 'extended');
+app.use(require('stylus').middleware(config.express.stylus_path));
+app.use(express.static(config.express.static_path));
 
 if (app.get('env') == 'development') {
 	app.locals.pretty = true;
 }
+app.locals.software = config.software;
 
 app.get('/', routes.index);
 
