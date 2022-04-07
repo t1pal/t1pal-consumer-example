@@ -50,15 +50,8 @@ app.use(session(session_config));
 
 
 app.get('/', routes.index);
+app.use(routes(app, config));
 
-app.get('/dashboard', routes.index);
-app.get('/auth/connect', routes.index);
-app.get('/auth/logout', routes.index);
-app.get('/auth/connect/t1pal', routes.index);
-app.get('/api/sites', routes.index);
-app.get('/api/sites/:site_name', routes.index);
-app.get('/api/sites/:site_name/views', routes.index);
-app.get('/api/sites/:site_name/views/:view_name', routes.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

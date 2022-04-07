@@ -13,6 +13,13 @@ var config = {
     name: process.env.SOFTWARE_NAME || 'Program Name',
     salutation: process.env.SOFTWARE_SALUTATION || 'Hello World.',
     author: process.env.SOFTWARE_AUTHOR || 'Author',
+  },
+  oauth: {
+    base_url: process.env.OAUTH_BASE_URL || '',
+    auth_url: process.env.OAUTH_AUTH_URL,
+    token_url: process.env.OAUTH_TOKEN_URL || process.env.OAUTH_AUTH_URL,
+    client_id: process.env.OAUTH_CLIENT_ID,
+    client_secret: process.env.OAUTH_CLIENT_SECRET,
   }
 
 };
