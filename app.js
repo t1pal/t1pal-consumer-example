@@ -31,7 +31,7 @@ app.use(express.static(config.express.static_path));
 var session_config = {
   secret: config.express.session_secret,
   resave: false,
-  saveUnitialized: true,
+  saveUninitialized: true,
   cookie: { }
 };
 
@@ -47,6 +47,8 @@ if (app.get('env') == 'production') {
 }
 
 app.use(session(session_config));
+app.use(passport.initialize( ));
+app.use(passport.session( ));
 
 
 app.get('/', routes.index);

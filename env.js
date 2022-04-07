@@ -15,9 +15,9 @@ var config = {
     author: process.env.SOFTWARE_AUTHOR || 'Author',
   },
   oauth: {
-    base_url: process.env.OAUTH_BASE_URL || '',
-    auth_url: process.env.OAUTH_AUTH_URL,
-    token_url: process.env.OAUTH_TOKEN_URL || process.env.OAUTH_AUTH_URL,
+    base_url: process.env.OAUTH_BASE_URL || 'http://169.254.1.1:4944',
+    auth_url: process.env.OAUTH_AUTH_URL || 'http://127.0.0.1:4455/oauth2/auth',
+    token_url: process.env.OAUTH_TOKEN_URL || process.env.OAUTH_AUTH_URL || 'http://127.0.0.1:4455/oauth2/token',
     client_id: process.env.OAUTH_CLIENT_ID,
     client_secret: process.env.OAUTH_CLIENT_SECRET,
   }
