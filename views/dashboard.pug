@@ -14,3 +14,8 @@ block content
                 a(href="/auth/connect") Connect to T1Pal
               li
                 a(href="/dashboard") Dashboard
+            h3 Sites
+
+            each site in sites
+              h4
+                a(href="/details/" + site.name) #{site.name} Details
