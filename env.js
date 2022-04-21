@@ -15,10 +15,10 @@ var config = {
     author: process.env.SOFTWARE_AUTHOR || 'Author',
   },
   oauth: {
-    resources: process.env.OAUTH_RESOURCES || 'http://169.254.1.1:3010/', // 'https://t1pal.host/',
-    base_url: process.env.OAUTH_BASE_URL || 'http://169.254.1.1:4944',
-    auth_url: process.env.OAUTH_AUTH_URL || 'http://127.0.0.1:4455/oauth2/auth',
-    token_url: process.env.OAUTH_TOKEN_URL || process.env.OAUTH_AUTH_URL || 'http://127.0.0.1:4455/oauth2/token',
+    resources: process.env.OAUTH_RESOURCES || 'https://t1pal.host/',
+    base_url: process.env.OAUTH_BASE_URL || 'https://t1pal-partner-example.dummy0/', // 'http://169.254.1.1:4944',
+    auth_url: process.env.OAUTH_AUTH_URL || 'https://account.t1pal.host/oauth2/auth',
+    token_url: process.env.OAUTH_TOKEN_URL || process.env.OAUTH_AUTH_URL || 'https://account.t1pal.host/oauth2/token',
     client_id: process.env.OAUTH_CLIENT_ID,
     client_secret: process.env.OAUTH_CLIENT_SECRET,
   }
