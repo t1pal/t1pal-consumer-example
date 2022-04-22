@@ -77,7 +77,7 @@ function defaultRoutes (app, config) {
   function get_userinfo (req, res, next) {
     console.log('attaching', req.user.accessToken, 'to', config.oauth.resources);
     var client = t1pal_client({baseURL: config.oauth.resources, token: req.user.accessToken});
-    client.get('http://169.254.1.1:3010/api/v1/own/account/sites.json').then(function (info) {
+    client.get('/api/v1/own/account/sites.json').then(function (info) {
       console.log('axios response', info);
       res.locals.sites = info.data;
       next( );
